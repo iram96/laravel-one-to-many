@@ -11,6 +11,7 @@
     <table class="mx-auto">
         <tr class="row">
             <th class="col">Titolo</th>
+            <th class="col">Categoria</th>
             <th class="col">Creato il</th>
             <th class="col">Modificato il</th>
             <th class="col">Actions</th>
@@ -18,6 +19,11 @@
         @foreach ($posts as $post)
         <tr class="row">
             <td class="col"> {{ $post->title}}</td>
+            <td class="col"> @if ($post->category)
+                {{ $post->category->label}}
+            @else
+                
+            @endif </td>
             <td class="col"> {{ $post->created_at}}</td>
             <td class="col"> {{ $post->updated_at}}</td>
             <td class="col"> 
